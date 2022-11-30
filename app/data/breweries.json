@@ -1,0 +1,194 @@
+{
+	"Amundsen Brewery": {
+		"origen": "Noruega",
+		"archivo": "amundsen"
+	},
+	"Ārpus Brewing Co.": {
+		"origen": "Letonia",
+		"archivo": "arpus"
+	},
+	"Basqueland Brewing": {
+		"origen": "Donostia",
+		"archivo": "basqueland"
+	},
+	"Beavertown Brewery": {
+		"origen": "Reino Unido",
+		"archivo": "beavertown"
+	},
+	"Bitburger Brauerei": {
+		"origen": "Alemania",
+		"archivo": "bitburger"
+	},
+	"Brewski": {
+		"origen": "Suecia",
+		"archivo": "brewski"
+	},
+	"Caleya": {
+		"origen": "Asturias",
+		"archivo": "caleya"
+	},
+	"Cierzo Brewing Co.": {
+		"origen": "Zaragoza",
+		"archivo": "cierzo"
+	},
+	"D'equí": {
+		"origen": "Asturias",
+		"archivo": "dequi"
+	},
+	"Dougall's": {
+		"origen": "Cantabria",
+		"archivo": "dougalls"
+	},
+	"Duchesse De Bourgogne": {
+		"origen": "Bélgica",
+		"archivo": "duchesse"
+	},
+	"Duration Brewing": {
+		"origen": "Reino Unido",
+		"archivo": "duration"
+	},
+	"Espiga": {
+		"origen": "Barcelona",
+		"archivo": "espiga"
+	},
+	"Founders Brewing Co.": {
+		"origen": "EE.UU.",
+		"archivo": "founders"
+	},
+	"Freddo Fox": {
+		"origen": "Barcelona",
+		"archivo": "freddo"
+	},
+	"Fuerst Wiacek": {
+		"origen": "Alemania",
+		"archivo": "fuerst"
+	},
+	"Garage Beer Co": {
+		"origen": "Barcelona",
+		"archivo": "garage"
+	},
+	"Garden Brewery, The": {
+		"origen": "Croacia",
+		"archivo": "garden"
+	},
+	"Gross": {
+		"origen": "Donostia",
+		"archivo": "gross"
+	},
+	"Juguetes Perdidos": {
+		"origen": "Argentina",
+		"archivo": "juguetes"
+	},
+	"La Grúa": {
+		"origen": "Cantabria",
+		"archivo": "lagrua"
+	},
+	"La Pirata": {
+		"origen": "Barcelona",
+		"archivo": "lapirata"
+	},
+	"La Quince": {
+		"origen": "Madrid",
+		"archivo": "laquince"
+	},
+	"Laugar Brewery": {
+		"origen": "Bizkaia",
+		"archivo": "laugar"
+	},
+	"Leffe": {
+		"origen": "Bélgica",
+		"archivo": "leffe"
+	},
+	"Lervig Brewery": {
+		"origen": "Noruega",
+		"archivo": "lervig"
+	},
+	"Little Rain Brewing Company": {
+		"origen": "Barcelona",
+		"archivo": "littlerain"
+	},
+	"Löwenbräu": {
+		"origen": "Alemania",
+		"archivo": "lowenbrau"
+	},
+	"Les Trois Mousquetaires": {
+		"origen": "Canadá",
+		"archivo": "ltm"
+	},
+	"Magic Rock Brewing": {
+		"origen": "Reino Unido",
+		"archivo": "magicrock"
+	},
+	"Mikkeller": {
+		"origen": "Dinamarca",
+		"archivo": "mikkeller"
+	},
+	"Naparbier": {
+		"origen": "Navarra",
+		"archivo": "naparbier"
+	},
+	"Nøgne": {
+		"origen": "Noruega",
+		"archivo": "nogne"
+	},
+	"North Brewing Co.": {
+		"origen": "Reino Unido",
+		"archivo": "north"
+	},
+	"Northern Monk": {
+		"origen": "Reino Unido",
+		"archivo": "northern_monk"
+	},
+	"Oso Brew Co": {
+		"origen": "Madrid",
+		"archivo": "oso"
+	},
+	"Península": {
+		"origen": "Madrid",
+		"archivo": "peninsula"
+	},
+	"Pinta, Browar": {
+		"origen": "Polonia",
+		"archivo": "pinta"
+	},
+	"Põhjala Brewery": {
+		"origen": "Estonia",
+		"archivo": "pohjala"
+	},
+	"Porterhouse Brewing Co, The": {
+		"origen": "Irlanda",
+		"archivo": "porterhouse"
+	},
+	"Protokoll": {
+		"origen": "Alemania",
+		"archivo": "protokoll"
+	},
+	"Refu": {
+		"origen": "Lleida",
+		"archivo": "refu"
+	},
+	"Sáez & Son": {
+		"origen": "Valencia",
+		"archivo": "saezandson"
+	},
+	"SanFrutos": {
+		"origen": "Segovia",
+		"archivo": "sanfrutos"
+	},
+	"Santocristo": {
+		"origen": "Ourense",
+		"archivo": "santocristo"
+	},
+	"Spaten": {
+		"origen": "Alemania",
+		"archivo": "spaten"
+	},
+	"Tolibier's": {
+		"origen": "Asturias",
+		"archivo": "tolibiers"
+	},
+	"NINGUNO": {
+		"origen": "",
+		"archivo": "blanco"
+	}
+}

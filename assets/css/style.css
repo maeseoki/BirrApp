@@ -1,0 +1,134 @@
+@font-face {
+    font-family: Bungee;
+    src: url('../fonts/bungee-regular-webfont.woff2') format('woff2'),
+         url('../fonts/bungee-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	font-display: swap;
+
+}
+
+@font-face {
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 400;
+	src: url('../fonts/open-sans-regular.woff2') format('woff2'),
+		 url('../fonts/open-sans-regular.woff') format('woff');
+	font-display: swap;
+}
+
+:root {
+	--blanco: #fff;
+	--negro: #000;
+	--rojo: #ff4646;
+}
+
+p {
+	margin: 0;
+}
+  
+
+.app {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	align-items: center;
+	height: 100vh;
+	max-width: 100%;
+	margin: 0;
+	overflow: hidden;
+	background-color: var(--negro);
+	font-family: 'Open Sans', sans-serif;
+	color: var(--blanco);
+}
+
+.cervezas {
+	flex: 70% 1 1;
+	height: 100%;
+}
+
+.informacion {
+	flex: 30% 1 2;
+	height: 100%;
+	border-left: 4px solid var(--blanco);
+}
+
+.grifo {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0.25rem 1rem 0.25rem 0;
+}
+
+.grifo:not(:last-child) {
+	border-bottom: 2px solid var(--blanco);
+}
+
+.grifo__nombre {
+	flex-basis: 60%;
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 0.25rem;
+	padding: 0 1rem 0 0.5rem;
+	font-size: 2rem;
+}
+
+.grifo__nombre::after {
+	content: '';
+	display: block;
+	position: relative;
+	right: -1rem;
+	top: 0;
+	width: 2px;
+	height: 100px;
+	background: var(--blanco);
+}
+
+.grifo__logo {
+	font-size: 2rem;
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+
+.grifo__info {
+	flex-basis: 40%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0.5rem 1rem;
+	font-size: 1.5rem;
+}
+
+.grifo__estilo {
+	font-size: 2rem;
+	font-weight: bold;
+	line-height: 1;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+.grifo__cerveza {
+	font-family: Bungee, sans-serif;
+	font-weight: bold;
+	color: var(--rojo);
+	text-align: center;
+	line-height: 1;
+}
+
+.grifo__vasos {
+	display: flex;
+	flex-basis: 40%;
+	justify-content: space-between;
+	align-items: flex-end;
+}
+
+.grifo__precio {
+	font-weight: bold;
+}
+
+.redes-sociales {
+	text-align: center;
+}

@@ -195,6 +195,10 @@
 		"origen": "Asturias",
 		"archivo": "tolibiers"
 	},
+	"Ziemia Obiecana": {
+		"origen": "Polonia",
+		"archivo": "ziemiaobiecana"
+	},
 	"NINGUNO": {
 		"origen": "",
 		"archivo": "blanco"

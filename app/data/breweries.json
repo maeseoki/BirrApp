@@ -207,6 +207,10 @@
 		"origen": "Asturias",
 		"archivo": "tolibiers"
 	},
+	"Vocation": {
+		"origen": "Reino Unido",
+		"archivo": "vocation"
+	},
 	"Ziemia Obiecana": {
 		"origen": "Polonia",
 		"archivo": "ziemiaobiecana"

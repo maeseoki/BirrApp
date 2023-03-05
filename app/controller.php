@@ -149,6 +149,9 @@ function saveBeers( $beers ) {
 	}
 }
 
+/**
+ * Save breweries.
+ */
 function saveBreweries( $breweries ) {
 	$breweriesEncoded = json_encode( $breweries );
 	$date = date( 'Y-m-d H:i:s' );

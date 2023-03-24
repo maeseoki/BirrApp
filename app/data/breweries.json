@@ -55,6 +55,10 @@
 		"origen": "Barcelona",
 		"archivo": "espiga"
 	},
+	"Fermenterarna": {
+		"origen": "Suecia",
+		"archivo": "fermenterarna"
+	},
 	"Founders Brewing Co.": {
 		"origen": "EE.UU.",
 		"archivo": "founders"

@@ -1,6 +1,13 @@
 <?php
 require_once( dirname( __FILE__ ) . '/config.php' );
 
+/**
+ * Para añadir nuevas cervecezas, subir las imágenes de nombre y logo a sus carpetas correspondientes, añadir nuevo elemento al app/data/breweries.json y descomentar la función genesisBreweries(). Luego llamar directamente al controlador, grifos.ziopig.es/app/controller.php 
+ * 
+ * Una vez se ha ejecutado, volver a comentar la función.
+ */
+//genesisBreweries();
+
 if ( $_SERVER['REQUEST_METHOD'] === 'POST' && isset( $_SERVER['HTTP_X_AUTH'] ) ) {
 	if ( checkContentType() && authenticate() ) {
 		saveChanges();
@@ -71,11 +78,6 @@ function authenticate() {
 	}
 }
 
-/**
- * Create connexion with MySQL DB
- * 
- * @return void|mysqli
- */
 function connectDb() {
 	$mysqli = new mysqli( HOST, USERNAME, PASSWORD, DBNAME);
 	if ($mysqli->connect_errno) {
@@ -90,11 +92,6 @@ function connectDb() {
 	}
 }
 
-/**
- * Retrieve all Breweries from DB
- * 
- * @return string	Json string of all breweries
- */
 function getAllBreweries() {
 	$db = connectDb();
 	$sql = "SELECT `datoscerveceras` FROM `cerveceras` ORDER BY id DESC LIMIT 1";
@@ -103,11 +100,6 @@ function getAllBreweries() {
 	return $breweries['datoscerveceras'];
 }
 
-/**
- * Retrieve all Beers from DB
- * 
- * @return string	Json string of all beers
- */
 function getAllBeers() {
 	$db = connectDb();
 	$sql = "SELECT `datoscervezas` FROM `cervezas` ORDER BY id DESC LIMIT 1";
@@ -116,12 +108,6 @@ function getAllBeers() {
 	return $beers['datoscervezas'];
 }
 
-/**
- * Save beer JSON to DB
- * 
- * @param Object $beers	Beer object decoded
- * @return void	Return http response, 200 on Ok, 503 on failure
- */
 function saveBeers( $beers ) {
 	$beersEncoded = json_encode( $beers );
 	$date = date( 'Y-m-d H:i:s' );
@@ -149,9 +135,6 @@ function saveBeers( $beers ) {
 	}
 }
 
-/**
- * Save breweries.
- */
 function saveBreweries( $breweries ) {
 	$breweriesEncoded = json_encode( $breweries );
 	$date = date( 'Y-m-d H:i:s' );
@@ -233,18 +216,12 @@ function writeBeersFile( $data ) {
 	}
 }
 
-/**
- * Save beers.json as initial beers in DB. Just to run the first time.
- */
 function genesisBeers() {
 	$beers = file_get_contents( 'data/beers.json' );
 	saveBeers( json_decode( $beers ) );
 	die( 'Génesis de cervezas ejecutado' );
 }
 
-/**
- * Save breweries.json in DB. Can be run any time a new brewery is added. More info at the top of this file.
- */
 function genesisBreweries() {
 	$breweries = file_get_contents( 'data/breweries.json' );
 	saveBreweries( json_decode( $breweries ) );

@@ -124,7 +124,7 @@ const getForm = () => {
  const getAllBreweries = async () => {
 	const response = await fetch('../app/controller.php?data=breweries')
 		.then( response => response.json() )
-		.catch( error => alert( 'Error al recuperar las cerveceras: ' + error.message ) );
+		.catch( error => console.error( 'Error al recuperar las cerveceras: ' + error.message ) );
 	return response;
 }
 

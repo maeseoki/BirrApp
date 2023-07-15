@@ -23,7 +23,7 @@ const depurar = false;
  const getAllBreweries = async () => {
 	const response = await fetch('./app/controller.php?data=breweries')
 		.then( response => response.json() )
-		.catch( error => alert( 'Error al recuperar las cerveceras: ' + error.message ) );
+		.catch( error => console.error( 'Error al recuperar las cerveceras: ' + error.message ) );
 	return response;
 }
 
@@ -34,7 +34,7 @@ const depurar = false;
  const getAllBeers = async () => {
 	const response = await fetch('./app/controller.php?data=beers')
 		.then( response => response.json() )
-		.catch( error => alert( 'Error al recuperar las cervezas: ' + error.message ) );
+		.catch( error => console.error( 'Error al recuperar las cervezas: ' + error.message ) );
 	return response;
 }
 
@@ -100,9 +100,9 @@ const generateTaps = ( breweries ) => {
 /**
  * Generate the origin and full name of the brewery
  *
- * @param {Object} breweries Retrieved breweries
- * @param {String} brewedBy File name for the brewery that brewed actual beer
- * @return {Array} Array with brewery origin and full name
+ * @param {object} breweries Retrieved breweries
+ * @param {string} brewedBy File name for the brewery that brewed actual beer
+ * @return {array} Array with brewery origin and full name
  */
 const generateBrewery = ( breweries, brewedBy ) => {
 	for ( const brewery in breweries ) {
@@ -115,15 +115,15 @@ const generateBrewery = ( breweries, brewedBy ) => {
 /**
  * Hash the data.
  *
- * @param {String} s String to be hashed.
- * @return Hash
+ * @param {string} beers String to be hashed.
+ * @return {string} Hash
  */
 const hashCode = beers => md5( JSON.stringify( beers ) );
 
 /**
  * Check if server has differtent beers on tap by comparing hashes.
  *
- * @param {Object} beers
+ * @param {object} beers
  * @return Beers object
  */
 const checkIfUpdated = beers => {

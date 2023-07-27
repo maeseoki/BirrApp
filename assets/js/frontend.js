@@ -12,7 +12,8 @@ const depurar = false;
  const getOnTap = () => {
 	getAllBreweries()
 		.then( breweries => breweries )
-		.then( breweries =>	generateTaps( breweries ) );
+		.then( breweries =>	generateTaps( breweries ) )
+		.catch( error => console.error( 'Error al recuperar las cervezas: ' + error.message ) );
 }
 
 /**
@@ -87,7 +88,8 @@ const generateTaps = ( breweries ) => {
 			section.innerHTML = html;
 			populateGrid( section );
 		}
-	} );
+	} )
+	.catch( error => console.error( 'Error al recuperar las cervezas: ' + error.message ) );
 }
 
 /**

@@ -22,6 +22,10 @@ if ( $_SERVER['REQUEST_METHOD'] === 'POST' && isset( $_SERVER['HTTP_X_AUTH'] ) )
 			http_response_code( 200 );
 			die( getAllBeers() );
 			break;
+		case 'updatebreweries':
+			http_response_code( 200 );
+			genesisBreweries();
+			break;
 		default:
 		http_response_code( 400 );
 		die( json_encode( [

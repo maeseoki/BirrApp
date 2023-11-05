@@ -19,6 +19,10 @@
 		"origen": "Reino Unido",
 		"archivo": "beavertown"
 	},
+	"Bidassoa Basque Brewery": {
+		"origen": "Gipuzkoa",
+		"archivo": "bidassoa"
+	},
 	"Bitburger Brauerei": {
 		"origen": "Alemania",
 		"archivo": "bitburger"
@@ -138,6 +142,10 @@
 	"Magic Rock Brewing": {
 		"origen": "Reino Unido",
 		"archivo": "magicrock"
+	},
+	"Mala Gissona": {
+		"origen": "Gipuzkoa",
+		"archivo": "malagissona"
 	},
 	"Mikkeller": {
 		"origen": "Dinamarca",

@@ -23,9 +23,17 @@
 		"origen": "Gipuzkoa",
 		"archivo": "bidassoa"
 	},
+	"Bishops Finger": {
+		"origen": "Reino Unido",
+		"archivo": "bishops_finger"
+	},
 	"Bitburger Brauerei": {
 		"origen": "Alemania",
 		"archivo": "bitburger"
+	},
+	"Brew By Numbers": {
+		"origen": "Reino Unido",
+		"archivo": "brew_by_numbers"
 	},
 	"Brewski": {
 		"origen": "Suecia",
@@ -90,6 +98,10 @@
 	"Garden Brewery, The": {
 		"origen": "Croacia",
 		"archivo": "garden"
+	},
+	"Grisú": {
+		"origen": "Asturias",
+		"archivo": "grisu"
 	},
 	"Gross": {
 		"origen": "Donostia",

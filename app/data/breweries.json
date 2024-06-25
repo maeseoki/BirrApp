@@ -91,6 +91,10 @@
 		"origen": "Alemania",
 		"archivo": "fuerst"
 	},
+	"Funky Fluid": {
+		"origen": "Polonia",
+		"archivo": "funkyfluid"
+	},
 	"Garage Beer Co": {
 		"origen": "Barcelona",
 		"archivo": "garage"
@@ -110,6 +114,10 @@
 	"Hoppy Road": {
 		"origen": "Francia",
 		"archivo": "hoppyroad"
+	},
+	"Joint Brewing": {
+		"origen": "Madrid",
+		"archivo": "joint"
 	},
 	"Juguetes Perdidos": {
 		"origen": "Argentina",

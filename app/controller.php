@@ -1,4 +1,8 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 require_once( dirname( __FILE__ ) . '/config.php' );
 
 /**
@@ -20,7 +24,7 @@ if ( $_SERVER['REQUEST_METHOD'] === 'POST' && isset( $_SERVER['HTTP_X_AUTH'] ) )
 			break;
 		case 'beers':
 			http_response_code( 200 );
-			die( getAllBeers() );
+			die( getAllBeers($_GET['place']) );
 			break;
 		case 'updatebreweries':
 			http_response_code( 200 );
@@ -104,12 +108,23 @@ function getAllBreweries() {
 	return $breweries['datoscerveceras'];
 }
 
-function getAllBeers() {
-	$db = connectDb();
-	$sql = "SELECT `datoscervezas` FROM `cervezas` ORDER BY id DESC LIMIT 1";
-	$result = $db->query( $sql );
-	$beers = $result->fetch_assoc();
-	return $beers['datoscervezas'];
+function getAllBeers($place) {
+    $db = connectDb();
+    $sql = "SELECT `datoscervezas` FROM `cervezas` WHERE `sitio` = ? ORDER BY id DESC LIMIT 1";
+    $stmt = $db->prepare($sql);
+	$stmt->bind_param("s", $place);
+	$stmt->execute();
+
+    // Bind the result variable
+    $stmt->bind_result($datosCervezas);
+    $stmt->fetch();  // Fetch the value into the bound variable
+
+    if ($datosCervezas !== null) {
+        return $datosCervezas;
+    } else {
+        echo "No beers found for the given place.";
+        return null;
+    }
 }
 
 function saveBeers( $beers ) {

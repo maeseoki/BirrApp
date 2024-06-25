@@ -43,6 +43,7 @@ p {
 }
 
 .cervezas {
+	display: grid;
 	flex: 70% 1 1;
 	height: 100%;
 }

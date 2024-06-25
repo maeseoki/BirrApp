@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=0.48, shrink-to-fit=yes">
-	<link rel="stylesheet" href="./assets/css/style.css">
+	<link rel="stylesheet" href="./assets/css/style.css?v=2.0.0">
 	<link rel="stylesheet" href="./assets/css/tiny-slider.css">
 	<script src="./assets/js/tiny-slider.js"></script>
 	<title>Zio Pig</title>
@@ -30,6 +30,6 @@
 		</div>
 	</aside>
 	<script src="./assets/js/md5.min.js"></script>
-	<script src="./assets/js/frontend.js?1344"></script>
+	<script src="./assets/js/frontend.js?1350"></script>
 </body>
 </html>

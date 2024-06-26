@@ -4,11 +4,14 @@
  * @version 0.1
  */
 
+const API_URL = 'http://grifos.ziopig.es/app/controller.php';
+const PLACE = 'ruta';
+
 /**
  * Retrieve all beers
  */
  const getAllBeers = async () => {
-	const response = await fetch('../app/controller.php?data=beers')
+	const response = await fetch( `${API_URL}?data=beers&place=${PLACE}`)
 		.then( response => response.json() )
 		.catch( error => alert( 'Error al recuperar las cervezas: ' + error.message ) );
 	return response;
@@ -122,7 +125,7 @@ const getForm = () => {
  * @return {Promise}
  */
  const getAllBreweries = async () => {
-	const response = await fetch('../app/controller.php?data=breweries')
+	const response = await fetch( `${API_URL}?data=breweries`)
 		.then( response => response.json() )
 		.catch( error => console.error( 'Error al recuperar las cerveceras: ' + error.message ) );
 	return response;
@@ -173,7 +176,8 @@ const sendData = ( data, password ) => {
 	const headers = new Headers({
 		'Content-Type': 'application/json',
 		'Accept': 'application/json',
-		'X-Auth': password
+		'X-Auth': password,
+		'X-Place': PLACE
 	});
 
 	const request = {
@@ -182,7 +186,7 @@ const sendData = ( data, password ) => {
 			headers: headers
 		};
 
-	fetch( '../app/controller.php', request)
+	fetch( API_URL, request )
 		.then( response => response.json() )
 		.then( data => printInfo( data ) )
 		.catch( error => console.log( 'Ocurrió un error al guardar: ' + error.message ) )

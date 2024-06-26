@@ -11,10 +11,9 @@ require_once( dirname( __FILE__ ) . '/config.php' );
  * Una vez se ha ejecutado, volver a comentar la función.
  */
 //genesisBreweries();
-
-if ( $_SERVER['REQUEST_METHOD'] === 'POST' && isset( $_SERVER['HTTP_X_AUTH'] ) ) {
+if ( $_SERVER['REQUEST_METHOD'] === 'POST' && isset( $_SERVER['HTTP_X_AUTH'] ) && isset( $_SERVER['HTTP_X_PLACE'] ) ) {
 	if ( checkContentType() && authenticate() ) {
-		saveChanges();
+		saveChanges($_SERVER['HTTP_X_PLACE']);
 	}
 } elseif( $_SERVER['REQUEST_METHOD'] === 'GET' ) {
 	switch ($_GET['data']) {
@@ -74,16 +73,19 @@ function checkContentType() {
  * @return true|void
  */
 function authenticate() {
-	if ( $_SERVER['HTTP_X_AUTH'] !== USERTOKEN ) {
-		http_response_code( 401 );
-		die( json_encode( [
-			'value' => 0,
-			'error' => 'La contraseña es incorrecta',
-			'data' => null,
-		] ) );
-	} else {
+	if ( $_SERVER['HTTP_X_AUTH'] === USERTOKEN_RUTA && $_SERVER['HTTP_X_PLACE'] === 'ruta' ) {
 		return true;
 	}
+	if ( $_SERVER['HTTP_X_AUTH'] === USERTOKEN_ARENA && $_SERVER['HTTP_X_PLACE'] === 'arena' ) {
+		return true;
+	}
+	
+	http_response_code( 401 );
+	die( json_encode( [
+		'value' => 0,
+		'error' => 'La contraseña es incorrecta',
+		'data' => null,
+	] ) );
 }
 
 function connectDb() {
@@ -127,13 +129,13 @@ function getAllBeers($place) {
     }
 }
 
-function saveBeers( $beers ) {
+function saveBeers( $beers, $place ) {
 	$beersEncoded = json_encode( $beers );
 	$date = date( 'Y-m-d H:i:s' );
 
 	$db = connectDb();
-	$stmt = $db->prepare( "INSERT INTO `cervezas` (datoscervezas, fecha)  VALUES (?, ?)" );
-	$stmt->bind_param( "ss", $beersEncoded, $date );
+	$stmt = $db->prepare( "INSERT INTO `cervezas` (datoscervezas, fecha, sitio)  VALUES (?, ?, ?)" );
+	$stmt->bind_param( "sss", $beersEncoded, $date, $place );
 	$result = $stmt->execute();
 	$stmt->close();
 	$db->close();
@@ -141,14 +143,14 @@ function saveBeers( $beers ) {
 		http_response_code( 200 );
 		die( json_encode( [
 			'value' => 1,
-			'error' => 'Cervezas guardadas correctamente',
+			'error' => 'Cervezas guardadas correctamente para ' . $place,
 			'data' => null,
 		] ) );
 	} else {
 		http_response_code( 503 );
 		die( json_encode( [
 			'value' => 0,
-			'error' => 'Error al guardar las cervezas',
+			'error' => 'Error al guardar las cervezas para ' . $place,
 			'data' => null,
 		] ) );
 	}
@@ -203,11 +205,11 @@ function properlyFormatted( $data ) {
 /**
  * Save request content.
  */
-function saveChanges() {
+function saveChanges( $place ) {
 	$content = trim( file_get_contents( 'php://input' ) );
 	$decoded = json_decode( $content, true );
 	if ( properlyFormatted( $decoded ) ) {
-		saveBeers( $decoded );
+		saveBeers( $decoded, $place );
 	}
 }
 
@@ -237,7 +239,7 @@ function writeBeersFile( $data ) {
 
 function genesisBeers() {
 	$beers = file_get_contents( 'data/beers.json' );
-	saveBeers( json_decode( $beers ) );
+	saveBeers( json_decode( $beers ), 'ruta' );
 	die( 'Génesis de cervezas ejecutado' );
 }
 

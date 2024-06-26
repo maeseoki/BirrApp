@@ -1,5 +1,6 @@
 const DEBUG = false;
 const API_URL = 'http://grifos.ziopig.es/app/controller.php';
+const PLACE = 'ruta';
 
 // Helper function to handle fetch requests
 const fetchData = async (params) => {
@@ -49,7 +50,7 @@ const checkIfUpdated = beers => {
 const getOnTap = async () => {
     try {
         const breweries = await fetchData({ data: 'breweries' });
-        const beers = await fetchData({ data: 'beers', place: 'ruta' });
+        const beers = await fetchData({ data: 'beers', place: PLACE });
         const isUpdated = checkIfUpdated(beers);
         if (isUpdated) {
             generateTaps(breweries, beers);

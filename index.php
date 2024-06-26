@@ -30,6 +30,6 @@
 		</div>
 	</aside>
 	<script src="./assets/js/md5.min.js"></script>
-	<script src="./assets/js/frontend.js?1351"></script>
+	<script src="./assets/js/frontend.js?1353"></script>
 </body>
 </html>

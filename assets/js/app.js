@@ -4,8 +4,8 @@
  * @version 0.1
  */
 
-const API_URL = 'http://grifos.ziopig.es/app/controller.php';
-const PLACE = 'ruta';
+const API_URL = 'https://arena.ziopig.es/app/controller.php';
+const PLACE = 'arena';
 
 /**
  * Retrieve all beers

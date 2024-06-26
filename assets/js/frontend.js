@@ -1,6 +1,6 @@
 const DEBUG = false;
-const API_URL = 'http://grifos.ziopig.es/app/controller.php';
-const PLACE = 'ruta';
+const API_URL = 'https://arena.ziopig.es/app/controller.php';
+const PLACE = 'arena';
 
 // Helper function to handle fetch requests
 const fetchData = async (params) => {

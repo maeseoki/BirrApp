@@ -2,6 +2,21 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+// fix CORS
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Headers: *");
+header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
+
+if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
+    // Debug output
+    echo("OPTIONS request handled");
+	die;
+    
+    header("Access-Control-Allow-Origin: *");
+    header("Access-Control-Allow-Headers: X-Requested-With, Content-Type, Accept, Origin, Authorization, X_AUTH, X_PLACE");
+    header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
+    exit;
+}
 
 require_once( dirname( __FILE__ ) . '/config.php' );
 
@@ -11,6 +26,7 @@ require_once( dirname( __FILE__ ) . '/config.php' );
  * Una vez se ha ejecutado, volver a comentar la función.
  */
 //genesisBreweries();
+
 if ( $_SERVER['REQUEST_METHOD'] === 'POST' && isset( $_SERVER['HTTP_X_AUTH'] ) && isset( $_SERVER['HTTP_X_PLACE'] ) ) {
 	if ( checkContentType() && authenticate() ) {
 		saveChanges($_SERVER['HTTP_X_PLACE']);
@@ -130,6 +146,9 @@ function getAllBeers($place) {
 }
 
 function saveBeers( $beers, $place ) {
+	header("Access-Control-Allow-Origin: *");
+	header("Access-Control-Allow-Headers: *");
+	header("Access-Control-Allow-Methods: *");
 	$beersEncoded = json_encode( $beers );
 	$date = date( 'Y-m-d H:i:s' );
 

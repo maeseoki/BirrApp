@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
 require_once( dirname( __FILE__ ) . '/config.php' );
 
 /**
- * Para añadir nuevas cervecezas, subir las imágenes de nombre y logo a sus carpetas correspondientes, añadir nuevo elemento al app/data/breweries.json y descomentar la función genesisBreweries(). Luego llamar directamente al controlador, grifos.ziopig.es/app/controller.php 
+ * Para añadir nuevas cervecezas, subir las imágenes de nombre y logo a sus carpetas correspondientes, añadir nuevo elemento al app/data/breweries.json y descomentar la función genesisBreweries(). Luego llamar directamente al controlador, ziopig.es/grifos/app/controller.php
  * 
  * Una vez se ha ejecutado, volver a comentar la función.
  */

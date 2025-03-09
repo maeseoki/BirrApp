@@ -4,7 +4,7 @@
  * @version 0.1
  */
 
-const API_URL = 'http://ziopig.es/grifos/app/controller.php';
+const API_URL = 'https://ziopig.es/grifos/app/controller.php';
 const PLACE = 'ruta';
 
 /**
